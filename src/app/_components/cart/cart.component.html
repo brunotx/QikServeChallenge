@@ -1,0 +1,12 @@
+<h4>Basket Contents</h4>
+<p *ngFor="let product of addCarts">
+  {{product.quantity}} x {{product.name}}
+</p>
+
+
+<h4>Expected Totals</h4>
+<div *ngIf="totalPayment !== 0">
+  <h5>Raw Total: {{totalPaymentWithoutSavings | currency:'GBP'}}</h5>
+  <h5>Total Promos: {{totalSavings | currency:'GBP'}}</h5>
+  <h5>Total Payable: {{totalPayment | currency:'GBP'}}</h5>
+</div>

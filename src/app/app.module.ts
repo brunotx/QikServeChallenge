@@ -1,18 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './_views/home/home.component';
+import { ProductsService } from './_services/products.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SidebarModule } from 'ng-sidebar';
+import { ProductsComponent } from './_components/products/products.component';
+import { CartComponent } from './_components/cart/cart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SidebarModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ProductsService],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

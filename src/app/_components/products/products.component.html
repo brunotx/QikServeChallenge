@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="card border-primary m-3" *ngFor="let product of products" style="max-width: 10rem;">
+    <div class="card-header">{{product.name}}</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">{{product.price | currency:'GBP'}}</h5>
+      <button type="button" class="btn btn-primary" (click)="addCart(product.id)">add to cart</button>
+    </div>
+  </div>
+</div>

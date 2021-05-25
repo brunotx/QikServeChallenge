@@ -1,0 +1,15 @@
+<ng-sidebar-container>
+
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="_opened" [mode]="'push'" [position]="'right'" [showBackdrop]="false"
+    [closeOnClickOutside]="false">
+    <app-cart [addCarts]="addCarts" [totalPayment]="totalPayment" 
+    [totalPaymentWithoutSavings]="totalPaymentWithoutSavings" [totalSavings]="totalSavings" [totalPaymentWithSavings]="totalPaymentWithSavings"></app-cart>
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <app-products (onAddCart)="addCart($event)"></app-products>
+  </div>
+
+</ng-sidebar-container>
